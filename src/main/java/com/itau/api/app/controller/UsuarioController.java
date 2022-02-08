@@ -43,15 +43,16 @@ public class UsuarioController {
 
 	@PostMapping("/usuario")
 	@ApiOperation(value = "Inclui/Atualiza um usuario")
-	public Usuario salvaUsuario(@RequestBody Usuario Usuario) {
-		return usuarioService.save(Usuario);
+	public Usuario salvaUsuario(@RequestBody Usuario usuario) {
+		return usuarioService.save(usuario);
 
 	}
 
 	@DeleteMapping("/usuario")
 	@ApiOperation(value = "Remove um Usuario")
-	public void deletaUsuario(@RequestBody Usuario Usuario) {
-		usuarioService.delete(Usuario);
+	public String deletaUsuario(@RequestBody Usuario usuario) {
+		usuarioService.delete(usuario);
+		return "Registro removido com sucesso";
 	}
 
 }
