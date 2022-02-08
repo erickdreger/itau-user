@@ -31,8 +31,9 @@ public class UsuarioServiceImpl implements UsuarioService {
 	}
 
 	@Override
-	public void delete(Usuario usuario) {
+	public String delete(Usuario usuario) {
 		usuarioRepository.delete(usuario);
+		return "Registro removido com sucesso";
 		
 	}
 
