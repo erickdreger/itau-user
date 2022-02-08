@@ -15,11 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.itau.api.app.model.Usuario;
 import com.itau.api.app.service.UsuarioService;
 
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping(value = "/api")
-//@Api(value = "API REST Usuarios")
+@Api(value = "API REST Usuarios")
 @CrossOrigin(origins = "*")
 public class UsuarioController {
 
@@ -41,7 +42,7 @@ public class UsuarioController {
 	}
 
 	@PostMapping("/usuario")
-	@ApiOperation(value = "Atualiza um usuario")
+	@ApiOperation(value = "Inclui/Atualiza um usuario")
 	public Usuario salvaUsuario(@RequestBody Usuario Usuario) {
 		return usuarioService.save(Usuario);
 

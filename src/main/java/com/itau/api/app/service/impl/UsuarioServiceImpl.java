@@ -3,14 +3,17 @@ package com.itau.api.app.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.itau.api.app.model.Usuario;
+import com.itau.api.app.repository.UsuarioRepository;
 import com.itau.api.app.service.UsuarioService;
 
+@Component
 public class UsuarioServiceImpl implements UsuarioService {
 
 	@Autowired
-	private UsuarioService usuarioRepository;
+	private UsuarioRepository usuarioRepository;
 
 	@Override
 	public List<Usuario> findAll() {
